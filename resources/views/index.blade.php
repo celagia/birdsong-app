@@ -7,28 +7,50 @@
 
     <title>Birdsong</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
     <!-- Styles -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body id="app">
-    <img id="banner" class="img-fluid" src="/storage/images/summerforest.jpg">
-    <div class="container text-center">
-        <h1 class="py-4">Birdsong</h1>
-        <h2>About</h2>
-        <p>I used to listen to a radio station that played the perfect UK birdsong sounds. When that radio disappeared,
-            I had a hard time finding just the right sound. I wanted to create a tool where you can customise your own
-            sound to get the perfect fit.</p>
-        <h2>Sounds</h2>
-        <p>TODO - Show sliders to control volume of different layers of birdsong</p>
-        <div>
-            <button class="btn btn-primary mb-4">Contact</button>
+<body>
+    <div id="app">
+        <div class="background"></div>
+        <div class="container text-center">
+            <div class="col-sm-12">
+                <h1 class="py-4"><b>Birdsong</b></h1>
+            </div>
+            <h2 class="pb-4">Sounds</h2>
+            <div class="d-flex justify-content-center flex-column align-items-center">
+                <div>Slider Image</div>
+                <slider></slider>
+                <div>Slider Image</div>
+                <slider></slider>
+                <div>Slider Image</div>
+                <slider></slider>
+                <div>Slider Image</div>
+                <slider></slider>
+                <div>Slider Image</div>
+                <slider></slider>
+            </div>
+        </div>
+        <div class="bg-body text-center rounded-top-5">
+            <div class="container">
+                <h2 class="py-4">About</h2>
+                <p class="lead">I used to listen to a radio station that played the perfect UK birdsong sounds. When
+                    that
+                    radio
+                    disappeared,
+                    I had a hard time finding just the right sound. I wanted to create a tool where you can customise
+                    your
+                    own
+                    sound to get the perfect fit.</p>
+                    <p>This is just a personal project born from an idea I had, feel free to suggest any changes or give any feedback!</p>
+            </div>
+            <div>
+                <button class="btn btn-primary my-4">Contact</button>
+            </div>
+            @include('footer')
         </div>
     </div>
 </body>
