@@ -1,12 +1,8 @@
-<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-    <div class="col-md-4 d-flex align-items-center">
-        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-            <svg class="bi" width="30" height="24">
-                <use xlink:href="#bootstrap" />
-            </svg>
+<footer class="d-flex flex-wrap justify-content-center align-items-center py-4 mt-4 border-top">
+    <div class="col-md-4 d-flex align-items-center justify-content-center">
         </a>
         <span class="mb-3 mb-md-0 text-body-secondary">Jack Howarth</span>
-        <ul class="nav col-md-4 list-unstyled d-flex align-items-center">
+        <ul class="nav col-md-4 list-unstyled d-flex align-items-center justify-content-center">
             <li class="ms-3"><a class="text-body-secondary" href="https://github.com/celagia"><svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 50 50" width="24" height="24">
                         <path
@@ -20,8 +16,8 @@
                         <use xlink:href="#linkedin" />
                     </svg>
                 </a></li>
+                <span class="mx-3 mb-md-0 text-body-secondary" style="font-size: 0.8rem">Icons by <a target="_blank" href="https://icons8.com">Icons8</a></span>
         </ul>
-        <span class="mb-3 mb-md-0 text-body-secondary">Icons by <a target="_blank" href="https://icons8.com">Icons8</a></span>
     </div>
 
 </footer>

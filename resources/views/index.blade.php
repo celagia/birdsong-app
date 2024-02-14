@@ -13,38 +13,43 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body id="app">
-    <div class="background"></div>
-    <div class="container text-center">
-        <div class="col-sm-12">
-            <h1 class="py-4"><b>Birdsong</b></h1>
+<body>
+    <div id="app">
+        <div class="background"></div>
+        <div class="container text-center">
+            <div class="col-sm-12">
+                <h1 class="py-4"><b>Birdsong</b></h1>
+            </div>
+            <h2 class="pb-4">Sounds</h2>
+            <div class="d-flex justify-content-center flex-column align-items-center">
+                <div>Slider Image</div>
+                <slider></slider>
+                <div>Slider Image</div>
+                <slider></slider>
+                <div>Slider Image</div>
+                <slider></slider>
+                <div>Slider Image</div>
+                <slider></slider>
+                <div>Slider Image</div>
+                <slider></slider>
+            </div>
         </div>
-        <h2 class="pt-2">Sounds</h2>
-        <p>TODO - Show sliders to control volume of different layers of birdsong</p>
-        <div class="pb-3">Slider Image</div>
-        <div class="pb-3">Slider o---------------o</div>
-        <div class="pb-3">Slider Image</div>
-        <div class="pb-3">Slider o---------------o</div>
-        <div class="pb-3">Slider Image</div>
-        <div class="pb-3">Slider o---------------o</div>
-        <div class="pb-3">Slider Image</div>
-        <div class="pb-3">Slider o---------------o</div>
-        <div class="pb-3">Slider Image</div>
-        <div class="pb-3">Slider o---------------o</div>
-    </div>
-    <div class="bg-body text-center rounded-top-5">
-        <div class="container">
-            <h2 class="py-4">About</h2>
-            <p class="lead">I used to listen to a radio station that played the perfect UK birdsong sounds. When that
-                radio
-                disappeared,
-                I had a hard time finding just the right sound. I wanted to create a tool where you can customise your
-                own
-                sound to get the perfect fit.</p>
-        </div>
-        <div>
-            <button class="btn btn-primary my-4">Contact</button>
-        </div>
+        <div class="bg-body text-center rounded-top-5">
+            <div class="container">
+                <h2 class="py-4">About</h2>
+                <p class="lead">I used to listen to a radio station that played the perfect UK birdsong sounds. When
+                    that
+                    radio
+                    disappeared,
+                    I had a hard time finding just the right sound. I wanted to create a tool where you can customise
+                    your
+                    own
+                    sound to get the perfect fit.</p>
+                    <p>This is just a personal project born from an idea I had, feel free to suggest any changes or give any feedback!</p>
+            </div>
+            <div>
+                <button class="btn btn-primary my-4">Contact</button>
+            </div>
             @include('footer')
         </div>
     </div>
