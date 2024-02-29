@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   font-size: 10em;
-  color: #B6B12B;
+  /* color: #B6B12B; */
+  color: #272d26;
   font-family: 'Playfair Display', serif;
 }
 
 h2 {
-  color: #32300C;
+  color: #272d26;
   font-family: 'Playfair Display', serif;
 }
 

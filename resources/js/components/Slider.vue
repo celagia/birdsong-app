@@ -1,53 +1,90 @@
 <template>
-  <div class="slider-container">
-    <input type="range" v-model="value" :min="0" :max="100" :step="1" class="slider">
-    <p>{{ value }}</p>
+  <div>
+    <div class="slider-component">
+      <div class="slidecontainer">
+        <input
+          ref="input"
+          v-model="currentValue"
+          type="range"
+          :min="min"
+          :max="max"
+          class="slider"
+          @input="onInput"
+        >
+      </div>
+    </div>
   </div>
 </template>
-  
-<script>
 
+<script>
 export default {
-  name: 'Slider',
   props: {
+    value: {
+      type: Number,
+      required: true
+    },
     min: {
       type: Number,
-      default: 0
+      required: true
     },
     max: {
       type: Number,
-      default: 100
-    },
-    step: {
-      type: Number,
-      default: 1
+      required: true
     }
   },
-  mounted() {
-    console.log('Component mounted.')
-  },
-  data() {
+  data(){
     return {
-      value: this.min
-    }
+      currentValue: this.value
+    };
   },
-  watch: {
-    value(newValue) {
-      this.$emit('input', newValue);
+  methods: {
+    onInput() {
+      // this.currentValue is a string because HTML is weird
+      this.$emit('input', parseInt(this.currentValue));
     }
   }
-}
+};
 </script>
-  
+
 <style scoped>
-.slider-container {
-  margin: 10px;
-  padding: 0px;
+.slider-component .slidecontainer {
+	margin: 10px;
+  padding: 10px;
   width: 300px;
 }
 
-.slider {
-  width: 100%;
+.slider-component .slidecontainer .slider {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 4px;
+	border-radius: 2px;
+	background: #6F7F6C;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: .2s;
+	transition: opacity .2s;
+}
+
+.slider-component .slidecontainer .slider:hover {
+	opacity: 1;
+}
+
+.slider-component .slidecontainer .slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 18px;
+	height: 18px;
+	background: #272d26;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+.slider-component .slidecontainer .slider::-moz-range-thumb {
+	width: 18px;
+	height: 18px;
+	background: #272d26;
+	cursor: pointer;
+	border-radius: 50%;
 }
 </style>
-  

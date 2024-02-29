@@ -22,7 +22,7 @@
             </div>
             <h2 class="pb-4">Sounds</h2>
             <div class="d-flex justify-content-center flex-column align-items-center">
-                <div>Slider Image</div>
+                <img src="/storage/images/icons8-pigeon.png">
                 <slider></slider>
                 <div>Slider Image</div>
                 <slider></slider>
