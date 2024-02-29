@@ -49,7 +49,7 @@ export default {
 <style scoped>
 .slider-component .slidecontainer {
 	margin: 10px;
-  padding: 0px;
+  padding: 10px;
   width: 300px;
 }
 
