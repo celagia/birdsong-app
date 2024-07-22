@@ -22,7 +22,11 @@
             </div>
             <h2 class="pb-4">Sounds</h2>
             <div class="d-flex justify-content-center flex-column align-items-center">
-                <img src="/storage/images/icons8-pigeon.png">
+            <h3>Wood Pigeon Sound</h3>
+            <audio controls autoplay muted>
+          <source src="/storage/sounds/XC825469 - Common Wood Pigeon.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
                 <slider></slider>
                 <div>Slider Image</div>
                 <slider></slider>
