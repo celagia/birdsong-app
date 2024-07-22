@@ -23,36 +23,34 @@
             <div class="col-sm-12">
                 <h1 class="py-4"><b>Birdsong</b></h1>
             </div>
-            <div class="playbutton">
-                <button onclick="playMusic()"><span><i class="fas fa-play"></i></span></button>
+            <div class="container text-center pb-5">
+                <button id="playPauseButton" class="btn btn-primary">Play</button>
             </div>
             <h2 class="pb-4">Sounds</h2>
             <div class="d-flex justify-content-center flex-column align-items-center">
                 <h3>Wood Pigeon</h3>
-                <audio class="bird" controls autoplay loop>
+                <audio class="bird" controls loop>
                     <source src="/storage/sounds/XC825469 - Common Wood Pigeon.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
                 <slider></slider>
                 <h3>Chiffchaff</h3>
-                <audio class="bird" controls autoplay loop>
+                <audio class="bird" controls loop>
                     <source src="/storage/sounds/XC862633 - Common Chiffchaff.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
                 <slider></slider>
                 <h3>Robin</h3>
-                <audio class="bird" controls autoplay loop>
+                <audio class="bird" controls loop>
                     <source src="/storage/sounds/XC872024 - European Robin.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
                 <slider></slider>
                 <h3>Blackbird</h3>
-                <audio class="bird" controls autoplay loop>
+                <audio class="bird" controls loop>
                     <source src="/storage/sounds/XC877442 - Common Blackbird.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
-                <slider></slider>
-                <div>Slider Image</div>
                 <slider></slider>
             </div>
         </div>
@@ -79,16 +77,48 @@
 </body>
 <script>
     var music = document.getElementsByClassName("bird");
+    var isToggled = false;
 
+    //button method
     function playMusic() {
-        for (var i = 0; i < music.length; i++) {
-            music[i].play();
+        if (isToggled == false) {
+            isToggled = !isToggled;
+            console.log("PLAY");
+            for (var i = 0; i < music.length; i++) {
+                music[i].play();
+            }
+        }
+        else {
+            console.log("PAUSE");
+            isToggled = !isToggled;
+            for (var i = 0; i < music.length; i++) {
+                music[i].pause();
+            }
         }
     }
 
-    function pauseMusic() {
-        music.pause();
-    }
+    //event listener toggle method
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggleButton = document.getElementById('playPauseButton');
+        
+        toggleButton.addEventListener('click', function () {
+            this.classList.toggle('active');
+            if (!isToggled) {
+                isToggled = !isToggled;
+                toggleButton.value="Pause";
+                for (var i = 0; i < music.length; i++) {
+                    music[i].play();
+                }
+            }
+            else {
+                isToggled = !isToggled;
+                toggleButton.value="Play";
+                for (var i = 0; i < music.length; i++) {
+                    music[i].pause();
+                }
+            }
+        });
+    });
 </script>
 
 </html>
