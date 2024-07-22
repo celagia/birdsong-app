@@ -29,25 +29,25 @@
             <h2 class="pb-4">Sounds</h2>
             <div class="d-flex justify-content-center flex-column align-items-center">
                 <h3>Wood Pigeon</h3>
-                <audio class="bird" controls autoplay loop>
+                <audio class="bird" controls loop>
                     <source src="/storage/sounds/XC825469 - Common Wood Pigeon.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
                 <slider></slider>
                 <h3>Chiffchaff</h3>
-                <audio class="bird" controls autoplay loop>
+                <audio class="bird" controls loop>
                     <source src="/storage/sounds/XC862633 - Common Chiffchaff.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
                 <slider></slider>
                 <h3>Robin</h3>
-                <audio class="bird" controls autoplay loop>
+                <audio class="bird" controls loop>
                     <source src="/storage/sounds/XC872024 - European Robin.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
                 <slider></slider>
                 <h3>Blackbird</h3>
-                <audio class="bird" controls autoplay loop>
+                <audio class="bird" controls loop>
                     <source src="/storage/sounds/XC877442 - Common Blackbird.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
