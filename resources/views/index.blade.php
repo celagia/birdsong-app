@@ -52,8 +52,6 @@
                     Your browser does not support the audio element.
                 </audio>
                 <slider></slider>
-                <div>Slider Image</div>
-                <slider></slider>
             </div>
         </div>
         <div class="bg-body text-center rounded-top-5">
