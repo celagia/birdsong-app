@@ -1,6 +1,10 @@
 <template>
   <div>
     <div class="slider-component">
+      <audio ref="audio" loop>
+        <source :src="audioSrc" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
       <div class="slidecontainer">
         <input ref="input" v-model="currentValue" type="range" :min="min" :max="max" class="slider" @input="onInput">
       </div>
@@ -22,6 +26,10 @@ export default {
     max: {
       type: Number,
       required: true
+    },
+    audioSrc: {
+      type: String,
+      required: true
     }
   },
   data() {
@@ -29,9 +37,20 @@ export default {
       currentValue: this.value
     };
   },
+  watch: {
+    currentValue(newValue) {
+      this.$refs.audio.volume = newValue / 100;
+    }
+  },
   methods: {
     onInput() {
       this.$emit('input', parseInt(this.currentValue));
+    },
+    playAudio() {
+      this.$refs.audio.play();
+    },
+    pauseAudio() {
+      this.$refs.audio.pause();
     }
   }
 };
