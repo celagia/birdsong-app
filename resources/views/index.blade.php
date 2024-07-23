@@ -29,29 +29,17 @@
             <h2 class="pb-4">Sounds</h2>
             <div class="d-flex justify-content-center flex-column align-items-center">
                 <h3>Wood Pigeon</h3>
-                <audio class="bird" controls loop>
-                    <source src="/storage/sounds/XC825469 - Common Wood Pigeon.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <slider></slider>
+                <slider :value="50" :min="0" :max="100" audio-src="/storage/sounds/XC825469 - Common Wood Pigeon.mp3">
+                </slider>
                 <h3>Chiffchaff</h3>
-                <audio class="bird" controls loop>
-                    <source src="/storage/sounds/XC862633 - Common Chiffchaff.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <slider></slider>
+                <slider :value="50" :min="0" :max="100" audio-src="/storage/sounds/XC862633 - Common Chiffchaff.mp3">
+                </slider>
                 <h3>Robin</h3>
-                <audio class="bird" controls loop>
-                    <source src="/storage/sounds/XC872024 - European Robin.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <slider></slider>
+                <slider :value="50" :min="0" :max="100" audio-src="/storage/sounds/XC872024 - European Robin.mp3">
+                </slider>
                 <h3>Blackbird</h3>
-                <audio class="bird" controls loop>
-                    <source src="/storage/sounds/XC877442 - Common Blackbird.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <slider></slider>
+                <slider :value="50" :min="0" :max="100" audio-src="/storage/sounds/XC877442 - Common Blackbird.mp3">
+                </slider>
             </div>
         </div>
         <div class="bg-body text-center rounded-top-5">
@@ -76,49 +64,39 @@
     </div>
 </body>
 <script>
-    var music = document.getElementsByClassName("bird");
-    var isToggled = false;
+var isToggled = false;
 
-    //button method
-    function playMusic() {
-        if (isToggled == false) {
+function playAllAudio() {
+    var audioElements = document.querySelectorAll('audio');
+    audioElements.forEach(function(audio) {
+        audio.play();
+    });
+}
+
+function pauseAllAudio() {
+    var audioElements = document.querySelectorAll('audio');
+    audioElements.forEach(function(audio) {
+        audio.pause();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var toggleButton = document.getElementById('playPauseButton');
+
+    toggleButton.addEventListener('click', function () {
+        this.classList.toggle('active');
+        if (!isToggled) {
             isToggled = !isToggled;
-            console.log("PLAY");
-            for (var i = 0; i < music.length; i++) {
-                music[i].play();
-            }
+            toggleButton.textContent = "Pause";
+            playAllAudio();
         }
         else {
-            console.log("PAUSE");
             isToggled = !isToggled;
-            for (var i = 0; i < music.length; i++) {
-                music[i].pause();
-            }
+            toggleButton.textContent = "Play";
+            pauseAllAudio();
         }
-    }
-
-    //event listener toggle method
-    document.addEventListener('DOMContentLoaded', function () {
-        var toggleButton = document.getElementById('playPauseButton');
-        
-        toggleButton.addEventListener('click', function () {
-            this.classList.toggle('active');
-            if (!isToggled) {
-                isToggled = !isToggled;
-                toggleButton.value="Pause";
-                for (var i = 0; i < music.length; i++) {
-                    music[i].play();
-                }
-            }
-            else {
-                isToggled = !isToggled;
-                toggleButton.value="Play";
-                for (var i = 0; i < music.length; i++) {
-                    music[i].pause();
-                }
-            }
-        });
     });
+});
 </script>
 
 </html>
