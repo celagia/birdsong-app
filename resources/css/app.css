@@ -20,6 +20,22 @@ p {
   font-family: 'Playfair Display', serif;
 }
 
+a:link {
+  color: #635A25;
+}
+
+a:visited {
+  color: #272d26;
+}
+
+a:hover {
+  color: #394125;
+}
+
+a:active {
+  color: #272d26;
+}
+
 body {
   font-family: 'Playfair Display', serif;
   background-image: url(/storage/images/summerforest.jpg);
@@ -30,69 +46,80 @@ body {
   margin: auto;
 }
 
+.bg-body {
+  background: rgb(103,93,38) !important;
+background: linear-gradient(0deg, rgba(103,93,38,1) 0%, rgba(159,144,59,1) 70%) !important;
+}
+
 .btn-primary {
   background-color: #635A25 !important;
   border-color: #635A25 !important;
 }
+
 .btn-primary:hover {
   background-color: #394125 !important;
   border-color: #394125 !important;
 }
+
 .btn-primary:active {
   background-color: #272d26 !important;
   border-color: #272d26 !important;
 }
+
 .btn-primary:visited {
   background-color: #635A25 !important;
   border-color: #635A25 !important;
 }
 
 #banner {
-    width: 100%;
-    height: 360px;
-    object-fit: cover;
-  }
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
 
-  *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-  }
-  
-  .playbutton{
-    display:grid;
-    place-items:center;
-    cursor:pointer;
-    padding:10rem;
-    border-radius:0%;
-    transition:all 0.3s;
-    transition: color 1s;
-  }
-  .playbutton:hover .fas{
-    color:#394125
-  }
-  .playbutton .fas{
-    display:grid;
-    place-items:center;
-    font-size:4rem;
-    color:gray;
-  }
-  .playbutton:active .fas{
-    color:#272d26;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  #playPauseButton {
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.playbutton {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 10rem;
+  border-radius: 0%;
+  transition: all 0.3s;
+  transition: color 1s;
+}
 
-  #playPauseButton.active {
-    background-color: #272D26 !important;
-    color: white;
-  }
-  
-  #playPausebutton:hover {
-    background-color: #394125 !important;
-    color: white;
-  }
+.playbutton:hover .fas {
+  color: #394125
+}
+
+.playbutton .fas {
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+  color: gray;
+}
+
+.playbutton:active .fas {
+  color: #272d26;
+}
+
+#playPauseButton {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#playPauseButton.active {
+  background-color: #272D26 !important;
+  color: white;
+}
+
+#playPausebutton:hover {
+  background-color: #394125 !important;
+  color: white;
+}

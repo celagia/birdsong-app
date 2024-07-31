@@ -1,4 +1,4 @@
-<footer class="d-flex flex-wrap justify-content-center align-items-center py-4 mt-4 border-top">
+<footer class="d-flex flex-wrap justify-content-center align-items-center py-4 mt-4">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         </a>
         <span class="mb-3 mb-md-0 text-body-secondary">Jack Howarth</span>
