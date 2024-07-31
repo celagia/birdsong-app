@@ -26,8 +26,7 @@
             <div class="container text-center pb-5">
                 <button id="playPauseButton" class="btn btn-primary">Play</button>
             </div>
-            <h2 class="pb-4">Sounds</h2>
-            <div class="d-flex justify-content-center flex-column align-items-center">
+            <div class="d-flex justify-content-center flex-column align-items-center pb-5">
                 <h3>Wood Pigeon</h3>
                 <slider :value="50" :min="0" :max="100" audio-src="/storage/sounds/XC825469 - Common Wood Pigeon.mp3">
                 </slider>
@@ -40,11 +39,21 @@
                 <h3>Blackbird</h3>
                 <slider :value="50" :min="0" :max="100" audio-src="/storage/sounds/XC877442 - Common Blackbird.mp3">
                 </slider>
+                </slider>
+                <h3>House Sparrow</h3>
+                <slider :value="50" :min="0" :max="100" audio-src="/storage/sounds/XC811634 - House Sparrow.mp3">
+                </slider>
+                <h3>Goldfinch</h3>
+                <slider :value="50" :min="0" :max="100" audio-src="/storage/sounds/XC915436 - European Goldfinch.mp3">
+                </slider>
+                <h3>Blue Tit</h3>
+                <slider :value="50" :min="0" :max="100" audio-src="/storage/sounds/XC613800 - Eurasian Blue Tit.mp3">
+                </slider>
             </div>
         </div>
         <div class="bg-body text-center rounded-top-5">
-            <div class="container">
-                <h2 class="py-4">About</h2>
+            <div class="container" style="width:25%">
+                <h2 class="pt-5 pb-4">About</h2>
                 <p class="lead">I used to listen to a radio station that played the perfect UK birdsong sounds. When
                     that
                     radio
@@ -52,9 +61,12 @@
                     I had a hard time finding just the right sound. I wanted to create a tool where you can customise
                     your
                     own
-                    sound to get the perfect fit.</p>
-                <p>This is just a personal project born from an idea I had, feel free to suggest any changes or give any
-                    feedback!</p>
+                    sound to get the perfect fit.<br><br>
+                    Have fun creating the right dawn chorus for you!<br>
+                    This is just a personal project born from an idea I had, feel free to suggest any changes or give
+                    any
+                    feedback!</p><br>
+                <p>All audio from <a target="_blank" href="https://xeno-canto.org/">xeno-canto.org</a></p>
             </div>
             <div>
                 <button class="btn btn-primary my-4">Contact</button>
@@ -64,39 +76,39 @@
     </div>
 </body>
 <script>
-var isToggled = false;
+    var isToggled = false;
 
-function playAllAudio() {
-    var audioElements = document.querySelectorAll('audio');
-    audioElements.forEach(function(audio) {
-        audio.play();
+    function playAllAudio() {
+        var audioElements = document.querySelectorAll('audio');
+        audioElements.forEach(function (audio) {
+            audio.play();
+        });
+    }
+
+    function pauseAllAudio() {
+        var audioElements = document.querySelectorAll('audio');
+        audioElements.forEach(function (audio) {
+            audio.pause();
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var toggleButton = document.getElementById('playPauseButton');
+
+        toggleButton.addEventListener('click', function () {
+            this.classList.toggle('active');
+            if (!isToggled) {
+                isToggled = !isToggled;
+                toggleButton.textContent = "Pause";
+                playAllAudio();
+            }
+            else {
+                isToggled = !isToggled;
+                toggleButton.textContent = "Play";
+                pauseAllAudio();
+            }
+        });
     });
-}
-
-function pauseAllAudio() {
-    var audioElements = document.querySelectorAll('audio');
-    audioElements.forEach(function(audio) {
-        audio.pause();
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    var toggleButton = document.getElementById('playPauseButton');
-
-    toggleButton.addEventListener('click', function () {
-        this.classList.toggle('active');
-        if (!isToggled) {
-            isToggled = !isToggled;
-            toggleButton.textContent = "Pause";
-            playAllAudio();
-        }
-        else {
-            isToggled = !isToggled;
-            toggleButton.textContent = "Play";
-            pauseAllAudio();
-        }
-    });
-});
 </script>
 
 </html>
